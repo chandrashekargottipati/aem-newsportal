@@ -2,4 +2,6 @@
 <jcr:root xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0"
     jcr:primaryType="cq:ClientLibraryFolder"
     allowProxy="{Boolean}true"
-    categories="[newsportal.grid]"/>
+    categories="[newsportal.desktop]"
+    cssProcessor="[default:none,min:none]"
+    jsProcessor="[default:none,min:none]"/>
