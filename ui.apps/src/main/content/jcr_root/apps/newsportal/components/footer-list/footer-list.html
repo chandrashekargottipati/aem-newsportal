@@ -1,0 +1,38 @@
+<div class="footer-widget" data-sly-test="${properties.sociallinks != 'true'}">
+  <h3 class="title">${properties.title}</h3>
+
+  <ul data-sly-list="${properties.navlist}">
+    <sly data-sly-use.contentresource="${item}/jcr:content" />
+    <li>
+      <a href="${item @ extension='html'}">${contentresource['jcr:title']}</a>
+    </li>
+  </ul>
+
+  <div class="contact-info" data-sly-test="${properties.socialicons == 'true'}">
+    ${properties.text @context ='html'}
+    <div class="social">
+      <a href=""><i class="fab fa-twitter"></i></a>
+      <a href=""><i class="fab fa-facebook-f"></i></a>
+      <a href=""><i class="fab fa-linkedin-in"></i></a>
+      <a href=""><i class="fab fa-instagram"></i></a>
+      <a href=""><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+  <div class="newsletter" data-sly-test="${properties.subscribe == 'true'}">
+    <div style="color: white; padding: 10px">${properties.text}</div>
+
+    <form>
+      <input class="form-control" type="email" placeholder="Your email here" />
+      <button class="btn">Submit</button>
+    </form>
+  </div>
+</div>
+
+<div class="footer-menu" data-sly-test="${properties.sociallinks == 'true'}">
+  <div class="container">
+    <div class="f-menu" data-sly-list="${properties.navlist}">
+      <sly data-sly-use.contentresource="${item}/jcr:content" />
+      <a href="${item @ extension='html'}">${contentresource['jcr:title']}</a>
+    </div>
+  </div>
+</div>
