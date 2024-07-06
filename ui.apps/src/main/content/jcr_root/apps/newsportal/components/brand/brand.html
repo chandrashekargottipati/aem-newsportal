@@ -4,8 +4,11 @@
     <div class="row align-items-center">
       <div class="col-lg-3 col-md-4">
         <div class="b-logo">
-          <a href="#">
-            <img src="/content/dam/newsportal/logo.png" alt="Logo" />
+          <a
+            href="${properties.logolink @ extension='html'}"
+            target="${properties.openinnewtab ? '_blank' : ''}"
+          >
+            <img src="${properties.logopath}" alt="${properties.alttext}" />
           </a>
         </div>
       </div>
