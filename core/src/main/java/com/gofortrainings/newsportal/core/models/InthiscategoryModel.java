@@ -19,7 +19,6 @@ import java.util.List;
 
 @Model(adaptables = {Resource.class, SlingHttpServletRequest.class})
 public class InthiscategoryModel {
-
     private static final Logger LOG = LoggerFactory.getLogger(InthiscategoryModel.class);
 
     @ValueMapValue
@@ -37,7 +36,7 @@ public class InthiscategoryModel {
     protected void init() {
         articleModelList = new ArrayList<>();
         String[] tags = pageProperties.get("cq:tags", String[].class);
-        String categoryTag = findCategoryTag(tags);//"newsportal:categories"
+        String categoryTag = findCategoryTag(tags);
         if (categoryTag != null) {
             String queryString = "SELECT * FROM [cq:Page] AS s WHERE ISDESCENDANTNODE([/content/newsportal]) AND s.[jcr:content/cq:tags] LIKE '" + categoryTag + "%'";
             try {
