@@ -24,27 +24,24 @@
                     <social-links
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                        value="true"
-                        text="social-links"
                         fieldLabel="Socilalinks"
-                        name="./sociallinks"/>
+                        name="./sociallinks"
+                        text="social-links"
+                        value="true"/>
                     <icons
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                        value="true"
-                        text="icons"
                         fieldLabel="socialicons"
-                        name="./socialicons"/>
+                        name="./socialicons"
+                        text="icons"
+                        value="true"/>
                     <subscribe
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                        value="true"
-                        text="subscribe"
                         fieldLabel="subscribe"
-                        name="./subscribe"/>
-                    
-                       
-                        
+                        name="./subscribe"
+                        text="subscribe"
+                        value="true"/>
                     <nav-list
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
