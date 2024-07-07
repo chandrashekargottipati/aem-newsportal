@@ -14,15 +14,15 @@
                     <log-link
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                        rootPath="/content/newsportal/us"
                         fieldLabel="logolink"
-                        name="./logolink"/>
+                        name="./logolink"
+                        rootPath="/content/newsportal/us"/>
                     <logo-path
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                         rootPath="/content/dam/newsportal"
                         fieldLabel="Logopath"
-                        name="./logopath"/>
+                        name="./logopath"
+                        rootPath="/content/dam/newsportal"/>
                     <log-img-alttext
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/textfield"
@@ -31,11 +31,10 @@
                     <open-in-newtab
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/checkbox"
-                        value="{Boolean}true"
+                        fieldLabel="Text"
+                        name="./openinnewtab"
                         text="open in new tab"
-                        name="./openinnewtab"/>
-
-                        
+                        value="{Boolean}true"/>
                 </items>
             </column>
         </items>
