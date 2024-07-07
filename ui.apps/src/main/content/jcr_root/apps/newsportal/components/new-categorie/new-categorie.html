@@ -1,0 +1,13 @@
+<sly
+  data-sly-use.newcatmodel="com.gofortrainings.newsportal.core.models.NewsCategoriesModel"
+/>
+<div class="sidebar-widget">
+  <h2 class="sw-title">${newcatmodel.title}</h2>
+  <div class="category">
+    <ul data-sly-list.key="${newcatmodel.categories}">
+      <li>
+        <a href="#">${key}</a><span>(${newcatmodel.categories[key]})</span>
+      </li>
+    </ul>
+  </div>
+</div>
