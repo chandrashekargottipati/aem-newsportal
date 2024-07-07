@@ -1,0 +1,10 @@
+<sly
+  data-sly-use.tagcloud="com.gofortrainings.newsportal.core.models.TagClouds"
+/>
+
+<div class="sidebar-widget">
+  <h2 class="sw-title">${tagcloud.title}</h2>
+  <div class="tags" data-sly-list.taglist="${tagcloud.tagList}">
+    <a href="">${taglist}</a>
+  </div>
+</div>
