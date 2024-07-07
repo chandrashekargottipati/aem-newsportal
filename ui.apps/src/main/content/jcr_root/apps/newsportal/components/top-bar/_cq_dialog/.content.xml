@@ -21,18 +21,18 @@
                         sling:resourceType="granite/ui/components/coral/foundation/form/numberfield"
                         fieldLabel="Phone"
                         name="./phone"/>
-
                     <rightnav
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/multifield"
-                        fieldLabel="Rightnav"
                         fieldDescription="Right nav"
+                        fieldLabel="Rightnav"
                         name="./rightnav">
-                        <field jcr:primaryType="nt:unstructured"
-                               sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                               fieldLabel="Rightnav Path"
-                               rootPath="/content/newsportal/us/en"
-                               name="./rightnav"/>
+                        <field
+                            jcr:primaryType="nt:unstructured"
+                            sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
+                            fieldLabel="Rightnav Path"
+                            name="./rightnav"
+                            rootPath="/content/newsportal/us/en"/>
                     </rightnav>
                 </items>
             </column>
