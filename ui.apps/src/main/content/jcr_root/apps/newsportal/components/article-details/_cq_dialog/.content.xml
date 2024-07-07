@@ -19,9 +19,9 @@
                     <image
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
-                        rootPath="/content/dam/newsportal"
                         fieldLabel="Image"
-                        name="./image"/>
+                        name="./image"
+                        rootPath="/content/dam/newsportal"/>
                 </items>
             </column>
         </items>

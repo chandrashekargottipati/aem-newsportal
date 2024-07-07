@@ -20,8 +20,8 @@
                         jcr:primaryType="nt:unstructured"
                         sling:resourceType="granite/ui/components/coral/foundation/form/pathfield"
                         fieldLabel="Image"
-                        rootPath="/content/dam/newsportal"
-                        name="./image"/>
+                        name="./image"
+                        rootPath="/content/dam/newsportal"/>
                 </items>
             </column>
         </items>
