@@ -1,0 +1,22 @@
+<sly
+  data-sly-use.inthiscategory="com.gofortrainings.newsportal.core.models.InthiscategoryModel"
+/>
+<div class="sidebar-widget">
+  <h2 class="sw-title">${inthiscategory.title}</h2>
+  <div
+    class="news-list"
+    data-sly-list.article="${inthiscategory.articleModelList}"
+  >
+    <div class="nl-item">
+      <div class="nl-img">
+        <img
+          src="${article.image}"
+          alt="${article.title @ context='attribute'}"
+        />
+      </div>
+      <div class="nl-title">
+        <a href="${article.path @ extension='html'}">${article.title}</a>
+      </div>
+    </div>
+  </div>
+</div>
