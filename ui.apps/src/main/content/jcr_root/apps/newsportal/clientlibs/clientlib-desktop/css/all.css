@@ -5801,7 +5801,7 @@
   src: url("../resources/fonts/fa-brands-400.eot");
   src: url("../resources/fonts/fa-brands-400.eot?#iefix")
       format("embedded-opentype"),
-    url("../resources/fa-brands-400.woff2") format("woff2"),
+    url("../resources/fonts/fa-brands-400.woff2") format("woff2"),
     url("../resources/fonts/fa-brands-400.woff") format("woff"),
     url("../resources/fonts/fa-brands-400.ttf") format("truetype"),
     url("../resources/fonts/fa-brands-400.svg#fontawesome") format("svg");
