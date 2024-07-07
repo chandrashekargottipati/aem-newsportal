@@ -1,7 +1,7 @@
 #base=js
 
-jquery-3.4.1.js
 bootstrap.bundle.js
 easing.js
-slick.js
+jquery-3.4.1.js
 main.js
+slick.js

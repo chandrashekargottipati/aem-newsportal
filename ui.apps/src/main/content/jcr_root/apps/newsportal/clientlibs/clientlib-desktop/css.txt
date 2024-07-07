@@ -1,7 +1,7 @@
 #base=css
 
-bootstrap.css
 all.css
-slick.css
+bootstrap.css
 slick-theme.css
+slick.css
 style.css
