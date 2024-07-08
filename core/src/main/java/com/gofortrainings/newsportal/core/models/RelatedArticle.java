@@ -41,16 +41,8 @@ public class RelatedArticle {
                 Tag categoryTagObject = tagManager.resolve(category);
                 if (categoryTagObject != null) {
                     Iterator<Resource> resourceIterator = categoryTagObject.find();
-                    while (resourceIterator.hasNext()) {
-                        Resource resource = resourceIterator.next();
-                        Resource resourcePath = resolver.getResource(resource.getPath() + "/root/container/article_grid/left-container/article_details");
-                        if (resourcePath != null) {
-                            ArticleModel articleModel = resourcePath.adaptTo(ArticleModel.class);
-                            if (articleModel != null) {
-                                relatedArticleList.add(articleModel);
-                            }
-                        }
-                    }
+                    relatedArticleList = NewsportalUtil.getArticleList(resourceIterator, resolver);
+
                 }
             }
         }
