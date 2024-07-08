@@ -1,0 +1,19 @@
+<sly
+  data-sly-use.relatedmodel="com.gofortrainings.newsportal.core.models.RelatedArticle"
+/>
+<div class="sn-related">
+  <h2>${relatedmodel.title}</h2>
+  <div
+    class="row sn-slider"
+    data-sly-list.relateditem="${relatedmodel.relatedArticleList}"
+  >
+    <div class="col-md-4">
+      <div class="sn-img">
+        <img src="${relateditem.image}" />
+        <div class="sn-title">
+          <a href="#">${relateditem.title}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
