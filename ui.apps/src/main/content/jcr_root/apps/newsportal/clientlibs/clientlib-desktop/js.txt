@@ -5,3 +5,4 @@ easing.js
 jquery-3.4.1.js
 main.js
 slick.js
+article.js

@@ -1,0 +1,5 @@
+{
+  "getArticleApi": "https://gorest.co.in/public/v3/posts",
+  "getClientid": "1",
+  "getEnable": "true"
+}

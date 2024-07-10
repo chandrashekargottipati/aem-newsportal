@@ -5,3 +5,4 @@ bootstrap.css
 slick-theme.css
 slick.css
 style.css
+article.css
