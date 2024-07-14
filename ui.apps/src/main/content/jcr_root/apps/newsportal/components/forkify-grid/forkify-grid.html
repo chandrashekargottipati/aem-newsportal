@@ -1,0 +1,21 @@
+
+<!-- Example of including Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+
+<div class="single-news">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4">
+        <div data-sly-resource="${'left-container' @resourceType='newsportal/components/container'}"></div>
+      </div>
+
+      <div class="col-lg-8">
+        <div class="sidebar">
+          <div data-sly-resource="${'right-container' @resourceType='newsportal/components/container'}"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
