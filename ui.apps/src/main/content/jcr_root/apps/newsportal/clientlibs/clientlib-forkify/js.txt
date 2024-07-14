@@ -1,0 +1,4 @@
+#base=js
+
+index.js
+controller.js

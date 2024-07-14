@@ -1,3 +1,6 @@
 {
-  "java.compile.nullAnalysis.mode": "disabled"
+  "java.compile.nullAnalysis.mode": "disabled",
+  "java.project.sourcePaths": [
+    "ui.apps/src/main/content/jcr_root/apps/newsportal/clientlibs/clientlib-forkify/Resources/fonts"
+  ]
 }
