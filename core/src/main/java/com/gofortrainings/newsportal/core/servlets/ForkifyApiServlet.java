@@ -29,12 +29,7 @@ public class ForkifyApiServlet extends SlingSafeMethodsServlet {
     @Override
     protected void doGet(SlingHttpServletRequest request, SlingHttpServletResponse response) throws IOException {
         String recipeId = request.getParameter("id");
-
-        if (recipeId == null || recipeId.isEmpty()) {
-            response.setStatus(SlingHttpServletResponse.SC_BAD_REQUEST);
-            response.getWriter().write("Missing 'id' parameter");
-            return;
-        }
+        String searchQuery = request.getParameter("query");
 
         if (!apiService.isApiEnabled()) {
             response.setStatus(SlingHttpServletResponse.SC_SERVICE_UNAVAILABLE);
@@ -42,7 +37,16 @@ public class ForkifyApiServlet extends SlingSafeMethodsServlet {
             return;
         }
 
-        String fullApiUrl = apiService.getFullApiUrl(recipeId);
+        String fullApiUrl;
+        if (recipeId != null && !recipeId.isEmpty()) {
+            fullApiUrl = apiService.getFullApiUrl(recipeId);
+        } else if (searchQuery != null && !searchQuery.isEmpty()) {
+            fullApiUrl = apiService.getFullApisearchUrl(searchQuery);
+        } else {
+            response.setStatus(SlingHttpServletResponse.SC_BAD_REQUEST);
+            response.getWriter().write("Missing 'id' or 'query' parameter");
+            return;
+        }
 
         try (CloseableHttpClient httpClient = HttpClients.createDefault()) {
             HttpGet httpGet = new HttpGet(fullApiUrl);
@@ -53,7 +57,7 @@ public class ForkifyApiServlet extends SlingSafeMethodsServlet {
             response.getWriter().write(result);
         } catch (Exception e) {
             response.setStatus(SlingHttpServletResponse.SC_INTERNAL_SERVER_ERROR);
-            response.getWriter().write("Error fetching recipe data: " + e.getMessage());
+            response.getWriter().write("Error fetching data from Forkify API: " + e.getMessage());
         }
     }
 }
