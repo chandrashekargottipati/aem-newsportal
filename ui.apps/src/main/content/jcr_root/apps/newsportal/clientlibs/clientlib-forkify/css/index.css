@@ -12,6 +12,109 @@ body {
   padding: 0 15px;
 }
 
+/* styles.css */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #333;
+  color: #fff;
+}
+
+.topbar__logo-img {
+  height: 40px;
+}
+
+.topbar__search {
+  display: flex;
+  align-items: center;
+}
+
+.topbar__search-input {
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+}
+
+.topbar__search-btn {
+  display: flex;
+  align-items: center;
+  background-color: #555;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.topbar__search-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.topbar__bookmark-container {
+  position: relative;
+}
+
+.topbar__bookmark-btn {
+  display: flex;
+  align-items: center;
+  background-color: #555;
+  border: none;
+  border-radius: 4px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.topbar__bookmark-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.topbar__bookmark-tooltip {
+  display: none;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  background-color: #fff;
+  color: #000;
+  padding: 10px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.topbar__bookmark-list ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.topbar__bookmark-list ul li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.topbar__bookmark-list ul li:hover {
+  background-color: #ddd;
+}
+
+/* Show the tooltip on hover */
+.topbar__bookmark-container:hover .topbar__bookmark-tooltip {
+  display: block;
+}
+
+/* Ensure the tooltip remains visible when hovered */
+.topbar__bookmark-tooltip:hover {
+  display: block;
+}
+
+/* Ensure the tooltip remains visible when the button is clicked */
+.topbar__bookmark-container.clicked .topbar__bookmark-tooltip {
+  display: block;
+}
+
+/* 
 /* Header styles */
 .topbar {
   background-color: #f9f5f3;
@@ -20,6 +123,7 @@ body {
   justify-content: space-between;
   align-items: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
 .topbar__logo-img {
@@ -68,6 +172,7 @@ body {
   cursor: pointer;
   display: flex;
   align-items: center;
+  position: relative;
 }
 
 .topbar__bookmark-icon {
@@ -85,6 +190,29 @@ body {
 .topbar__bookmark-btn:hover .topbar__bookmark-icon {
   fill: #f48982; /* Adjust hover color */
 }
+
+/* Tooltip */
+.topbar__bookmark-tooltip {
+  visibility: hidden;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  padding: 5px 0;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.topbar__bookmark-btn:hover .topbar__bookmark-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+*/
 
 /* Results list styles */
 .results {
@@ -411,4 +539,413 @@ body {
   100% {
     transform: rotate(360deg);
   }
+}
+
+/* Centering the h1 and p elements within the parent container */
+.recipe-details {
+  text-align: center;
+}
+
+.recipe-details h1,
+.recipe-details p {
+  display: inline-block;
+  text-align: center;
+}
+
+.no-recipes-message {
+  text-align: center;
+  color: red; /* Example color, change as needed */
+  font-size: 1.2rem; /* Example size, change as needed */
+  margin-top: 20px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.btn--inline {
+  display: inline-flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.btn--inline:hover {
+  color: #666;
+}
+
+.btn--inline svg {
+  width: 1rem;
+  height: 1rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  fill: currentColor;
+}
+
+.recipe-details {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recipe h2 {
+  font-size: 2rem;
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.recipe p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  margin: 10px 0;
+}
+
+.recipe p strong {
+  color: #333;
+}
+
+.recipe a {
+  color: #1a73e8;
+  text-decoration: none;
+}
+
+.recipe a:hover {
+  text-decoration: underline;
+}
+
+.recipe img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.recipe ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.recipe ul li {
+  margin: 5px 0;
+  color: #555;
+}
+
+.recipe .no-recipe {
+  color: #d9534f;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .recipe-details {
+    padding: 10px;
+  }
+
+  .recipe h2 {
+    font-size: 1.5rem;
+  }
+
+  .recipe p {
+    font-size: 0.9rem;
+  }
+}
+
+.recipe__details {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: auto;
+  margin-bottom: 1rem; /* Reduced margin-bottom */
+  gap: 0.5rem; /* Reduced gap between items */
+}
+
+.recipe__info {
+  display: flex;
+  align-items: center;
+  margin-right: 0.5rem; /* Reduced right margin */
+}
+
+.recipe__info-data--minutes,
+.recipe__info-data--people {
+  margin: 0 0.2rem; /* Reduced left and right margin */
+}
+
+.recipe__info-buttons {
+  display: flex;
+  align-items: center;
+  margin-left: 0.5rem; /* Reduced left margin */
+}
+
+.btn--round {
+  background-color: #f38e82;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem; /* Adjusted size */
+  height: 2.5rem; /* Adjusted size */
+  margin-left: 0.5rem; /* Reduced left margin */
+}
+
+.btn--bookmark svg {
+  width: 1.5rem; /* Adjusted size */
+  height: 1.5rem; /* Adjusted size */
+  fill: #fff;
+}
+
+/* Tooltip */
+.topbar__bookmark-tooltip {
+  visibility: hidden;
+  background-color: #fff;
+  color: #333;
+  text-align: left;
+  padding: 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  right: 0;
+  width: 300px; /* Adjust width as needed */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.topbar__bookmark-container:hover .topbar__bookmark-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.topbar__bookmark-list {
+  max-height: 200px; /* Adjust height as needed */
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.bookmark-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+  background-color: gray;
+}
+
+.bookmark-item:last-child {
+  border-bottom: none;
+}
+
+.bookmark-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.bookmark-item a {
+  color: #333;
+  text-decoration: none;
+}
+
+.bookmark-item a:hover {
+  text-decoration: underline;
+}
+
+/* Topbar styles */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+}
+
+.topbar__logo-img {
+  height: 40px;
+}
+
+.topbar__search {
+  display: flex;
+  align-items: center;
+}
+
+.topbar__search-input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.topbar__search-btn {
+  display: flex;
+  align-items: center;
+  padding: 5px 10px;
+  margin-left: 10px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.topbar__search-icon {
+  height: 16px;
+  width: 16px;
+  fill: currentColor;
+  margin-right: 5px;
+}
+
+.topbar__bookmark-container {
+  position: relative;
+}
+
+.topbar__bookmark-btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.topbar__bookmark-icon {
+  height: 16px;
+  width: 16px;
+  fill: currentColor;
+  margin-right: 5px;
+}
+
+.topbar__bookmark-tooltip {
+  visibility: hidden;
+  background-color: #fff;
+  color: #333;
+  text-align: left;
+  padding: 10px;
+  border-radius: 6px;
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  right: 0;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.topbar__bookmark-container:hover .topbar__bookmark-tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.topbar__bookmark-list {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-top: 10px;
+}
+
+.bookmark-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.bookmark-item:last-child {
+  border-bottom: none;
+}
+
+.bookmark-item img {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.bookmark-item a {
+  color: #333;
+  text-decoration: none;
+}
+
+.bookmark-item a:hover {
+  text-decoration: underline;
+}
+
+/* styles.css */
+
+/* Container for results and pagination */
+.results-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  width: calc(100% - 200px); /* Adjust width as needed */
+  margin-left: auto; /* Align to the right */
+  overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Style the results list */
+.results {
+  flex: 1; /* Take up available space */
+  padding: 20px; /* Adjust padding as needed */
+  list-style-type: none;
+  margin: 0;
+  overflow-y: auto;
+}
+
+/* Style the pagination */
+.pagination {
+  padding: 10px;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ccc;
+  text-align: center;
+}
+
+/* Example styles for pagination buttons */
+.pagination .btn--inline {
+  display: inline-block;
+  margin: 0 5px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.pagination .btn--inline:hover {
+  background-color: #0056b3;
+}
+
+.pagination .btn--inline svg {
+  width: 15px;
+  height: 15px;
+  vertical-align: middle;
+}
+
+.pagination .btn--inline span {
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+.pagination .pagination__btn--prev {
+  float: left;
+}
+
+.pagination .pagination__btn--next {
+  float: right;
 }

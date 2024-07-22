@@ -1,1 +1,1 @@
-var API_URL = "/bin/forkify/api";
+const API_URL = "/bin/forkify/api";

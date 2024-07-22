@@ -1,3 +1,22 @@
+// For example, instead of:
+
+// import myModule from './myModule';
+
+// Use:
+
+// const myModule = require('./myModule');
+
+// And instead of:
+
+// export default myFunction;
+
+// Use:
+
+// module.exports = myFunction;
+
+const API_URL = require("./config.JS");
+const helper = require("./helper.js");
+
 const state = {
   recipe: {},
   search: {
@@ -6,9 +25,9 @@ const state = {
   },
 };
 
-const loadRecipe = async function (id) {
+export const loadRecipe = async function (id) {
   try {
-    const data = await getJSON(`${API_URL}?id=${id}`);
+    const data = await helper.getJSON(`${API_URL}?id=${id}`);
     const { recipe } = data.data;
     state.recipe = {
       id: recipe.id,
@@ -26,26 +45,26 @@ const loadRecipe = async function (id) {
   }
 };
 
-const searchRecipe = async function (query) {
-  try {
-    state.search.query = query;
-    const data = await getJSON(`${API_URL}?query=${query}`);
-    console.log(data);
-    // You might want to process and store the search results here
+// const searchRecipe = async function (query) {
+//   try {
+//     state.search.query = query;
+//     const data = await getJSON(`${API_URL}?query=${query}`);
+//     console.log(data);
+//     // You might want to process and store the search results here
 
-    state.search.results = data.data.recipes.map((rec) => {
-      return {
-        id: rec.id,
-        title: rec.title,
-        publisher: rec.publisher,
-        image: rec.image_url,
-      };
-    });
-  } catch (error) {
-    console.error("Error searching recipes:", error);
-    throw error;
-  }
-};
+//     state.search.results = data.data.recipes.map((rec) => {
+//       return {
+//         id: rec.id,
+//         title: rec.title,
+//         publisher: rec.publisher,
+//         image: rec.image_url,
+//       };
+//     });
+//   } catch (error) {
+//     console.error("Error searching recipes:", error);
+//     throw error;
+//   }
+// };
 
-// Example usage (you can remove this if you're calling these functions elsewhere)
-searchRecipe("pizza");
+// // Example usage (you can remove this if you're calling these functions elsewhere)
+// searchRecipe("pizza");

@@ -6,16 +6,13 @@ const timeout = function (s) {
   });
 };
 
-async function getJSON(url) {
-  return fetch(url)
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response.json();
-    })
-    .catch((error) => {
-      console.error("There was a problem with the fetch operation:", error);
-      throw error;
-    });
+export async function getJSON(url) {
+  try {
+    const response = await fetch(url);
+    const data = response.json();
+    return data;
+  } catch (error) {
+    console.error("There was a problem with the fetch operation:", error);
+    throw error;
+  }
 }

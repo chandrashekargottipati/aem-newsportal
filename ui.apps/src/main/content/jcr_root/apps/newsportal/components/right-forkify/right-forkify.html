@@ -1,1 +1,51 @@
-<div class="recipe"></div>
+<sly
+  data-sly-use.model="com.gofortrainings.newsportal.core.models.StateModel"
+></sly>
+<div class="recipe-details">
+  <div class="recipe">
+    <h2 class="riht-recipe">Recipe Details</h2>
+    <div data-sly-test="${model.recipe}">
+      <p><strong>ID:</strong> ${model.recipe.id}</p>
+      <p><strong>Title:</strong> ${model.recipe.title}</p>
+      <p><strong>Publisher:</strong> ${model.recipe.publisher}</p>
+      <p>
+        <strong>Source URL:</strong>
+        <a href="${model.recipe.sourceUrl}" target="_blank"
+          >${model.recipe.sourceUrl}</a
+        >
+      </p>
+      <p>
+        <strong>Image:</strong>
+        <img src="${model.recipe.image}" alt="${model.recipe.title}" />
+      </p>
+      <p><strong>Servings:</strong> ${model.recipe.servings}</p>
+      <p><strong>Cooking Time:</strong> ${model.recipe.cookingTime} minutes</p>
+
+      <div class="recipe__user-generated hidden">
+        <svg>
+          <use
+            href="${icons}#icon-user"
+          ></use>
+        </svg>
+      </div>
+      <button class="btn--round btn--bookmark">
+        <svg class="">
+          <use
+            href="${icons}#icon-bookmark"
+          ></use>
+        </svg>
+      </button>
+    </div>
+
+      <h3>Ingredients</h3>
+      <ul>
+        <sly data-sly-list.ingredient="${model.recipe.ingredients}">
+          <li>${ingredient}</li>
+        </sly>
+      </ul>
+    </div>
+    <div data-sly-test="${!model.recipe}">
+      <p class="recipe">No recipe found for the given ID.</p>
+    </div>
+  </div>
+</div>

@@ -10,19 +10,23 @@
     <input type="text" class="topbar__search-input" placeholder="Search..." />
     <button type="submit" class="topbar__search-btn">
       <svg class="topbar__search-icon">
-        <use href="path/to/icons.svg#icon-search"></use>
+        <use href="/content/dam/newsportal/forkify/icons.svg#icon-search"></use>
       </svg>
       <span>Search</span>
     </button>
   </form>
-  <button class="topbar__bookmark-btn">
-    <svg class="topbar__bookmark-icon">
-      <use href="path/to/icons.svg#icon-bookmark"></use>
-    </svg>
-    <span>Bookmarks</span>
-  </button>
+  <div class="topbar__bookmark-container">
+    <button class="topbar__bookmark-btn">
+      <svg class="topbar__bookmark-icon">
+        <use
+          href="/content/dam/newsportal/forkify/icons.svg#icon-bookmark"
+        ></use>
+      </svg>
+      <span class="topbar__bookmark-text">Bookmarks</span>
+    </button>
+    <div class="topbar__bookmark-tooltip">
+      <span>Bookmark Recipe</span>
+      <div id="bookmarksList" class="topbar__bookmark-list"></div>
+    </div>
+  </div>
 </header>
-<script
-  type="module"
-  src="/apps/newsportal/clientlibs/clientlib-forkify/js/controller.js"
-></script>

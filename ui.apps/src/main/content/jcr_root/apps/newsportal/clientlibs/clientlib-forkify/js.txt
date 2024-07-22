@@ -1,10 +1,4 @@
 #base=js
 
 
-controller.js
-model.js
-RecipeView.js
-helper.js
-config.js
-index.js
-SearchView.js
+demo.js
