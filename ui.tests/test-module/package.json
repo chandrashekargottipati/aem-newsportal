@@ -7,8 +7,8 @@
     "cypress": "12.17.0",
     "cypress-fail-on-console-error": "^4.0.3",
     "cypress-multi-reporters": "^1.6.3",
-    "mocha-junit-reporter": "^2.2.0",
-    "cypress-terminal-report": "^5.3.3"
+    "cypress-terminal-report": "^5.3.3",
+    "mocha-junit-reporter": "^2.2.0"
   },
   "scripts": {
     "test": "cypress run --browser electron",
@@ -16,5 +16,8 @@
     "test-firefox": "cypress run --browser firefox"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cypress-eaas": "file:"
+  }
 }

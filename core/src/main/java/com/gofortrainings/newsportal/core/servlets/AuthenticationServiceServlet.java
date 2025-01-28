@@ -4,19 +4,13 @@ import org.apache.sling.api.SlingHttpServletRequest;
 import org.apache.sling.api.SlingHttpServletResponse;
 import org.apache.sling.api.servlets.SlingAllMethodsServlet;
 import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Reference;
-import org.apache.sling.api.servlets.SlingSafeMethodsServlet;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletException;
 import java.io.IOException;
-import java.util.List;
-import java.util.Arrays;
-
-import com.gofortrainings.newsportal.core.servlets.AuthenticationResult;
-import com.gofortrainings.newsportal.core.servlets.AuthenticationException;
-
 import java.sql.*;
+import java.util.Arrays;
+import java.util.List;
 
 @Component(service = Servlet.class, immediate = true, property = {
         "sling.servlet.methods=POST",
